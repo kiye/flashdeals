@@ -182,7 +182,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="contact-form-wrap">
-							<form id="contact-form" action="https://www.kwikydeals.com/mail.php" method="post">
+							<form id="contact-form" action="https://www.flashdeals4u.com/mail.php" method="post">
 								<div class="single-contact-form">
 									<div class="contact-box name">
 										<input type="text" name="name" placeholder="Your Name*">
@@ -304,6 +304,43 @@
     <a target="_blank" href="https://api.whatsapp.com/send?phone=+256776192866&amp;text=" style="bottom:10px; left:10px; position: fixed; z-index: 99999999;"> 
     <img style="height: 60px;" src="uniqlo/images/wlogo4.png" alt="WhatsApp chat">
     </a>
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript">
+      function sendEmail(){
+        var name = $("#name");
+        var email = $("#email");
+        var subject = $("#subject");
+        var body = $("#message");
+
+        if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(message)) {$.ajax({
+            url: 'mail.php',
+            method: 'POST',
+            dataType: 'json',
+            data:{
+                name: name.val(),
+                email: email.val(),
+                subject: subject.val(),
+                message: message.val()
+            }, success: function(response){
+              $('#contact-form')[0].reset(); 
+              $('.sent-notification').text("Message sent Successfully."); 
+            }
+        });
+    }
+    }
+    function isNotEmpty(caller){
+        if(caller.val()== ""){
+            caller.css('border','1px solid red');
+            return false;
+        }
+        else
+        {
+            caller.css('border', '');
+            return true;
+        }
+    }
+  </script>
     <!-- Bootstrap Framework js -->
     <script src="uniqlo/js/popper.min.js"></script>
     <script src="uniqlo/js/bootstrap.min.js"></script>
