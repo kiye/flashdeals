@@ -186,10 +186,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="contact-form-wrap">
-							<form id="contact-form" action="contact.php" method="post">
+							<form id="contact-form-wrap" action="contact.php" method="post">
 								<div class="single-contact-form">
 									<div class="contact-box name">
-										<input type="text" name="name" placeholder="Your Name*">
+										<input type="text" name="name" id="name" placeholder="Your Name*">
 										<input type="email" name="email" id="email" placeholder="Mail*">
 									</div>
 								</div>
@@ -359,7 +359,7 @@
                 /*  Contact Form
                 /* ========================================================================= */
                 
-                $('#contact-form').validate({
+                $('#contact-form-wrap').validate({
                     rules: {
                         name: {
                             required: true,
@@ -368,6 +368,10 @@
                         email: {
                             required: true,
                             email: true
+                        },
+                        subject:{
+                            required: true
+
                         },
                         message: {
                             required: true
@@ -381,6 +385,9 @@
                         email: {
                             required: "no email, no message"
                         },
+                        subject: {
+                            required: "no subject"
+                        },
                         message: {
                             required: "Message is Required.",
                             minlength: "thats all? really?"
@@ -392,15 +399,15 @@
                             data: $(form).serialize(),
                             url:"contact.php",
                             success: function() {
-                                $('#contact-form :input').attr('disabled', 'disabled');
-                                $('#contact-form').fadeTo( "slow", 0.15, function() {
+                                $('#contact-form-wrap :input').attr('disabled', 'disabled');
+                                $('#contact-form-wrap').fadeTo( "slow", 0.15, function() {
                                     $(this).find(':input').attr('disabled', 'disabled');
                                     $(this).find('label').css('cursor','default');
                                     $('#success').fadeIn();
                                 });
                             },
                             error: function() {
-                                $('#contact-form').fadeTo( "slow", 0.15, function() {
+                                $('#contact-form-wrap').fadeTo( "slow", 0.15, function() {
                                     $('#error').fadeIn();
                                 });
                             }
