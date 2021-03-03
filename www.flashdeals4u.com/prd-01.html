@@ -1,3 +1,13 @@
+<?php
+// (A) PROCESS ORDER FORM
+if (isset($_POST['name'])) { 
+  require_once "process.php"; 
+  echo $result == "" 
+    ? "<div class='notify'>Thank You! We have received your order</div>" 
+    : "<div class='notify'>$result</div>";
+}
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -203,7 +213,7 @@
 						<h3><big><strong>The Latest Second Hand kids Clothes Available For Limited Time Period.</strong></big></h3>
 						</div>
 						<hr>
-						                        						<div class="pro__detl__title">
+						    <div class="pro__detl__title">
 							<h2>Order Now</h2>
 							
 							<p>Kindly fill the form & we will deliver in 2 days</p>
@@ -211,15 +221,15 @@
 						<div class="pro__details">
 														<form method="POST" action="https://www.kwikydeals.com/index.php/product" id="orderfrm">
 								<div class="form-group">
-									<input type="text" class="form-control" name="names" placeholder="Name*" id="names" required="required" value="">
+									<input type="text" class="form-control" name="names" required="required" placeholder="Name*" id="names" required="required" value="">
 								</div>
 								<div class="form-group fake-input">
-									<input type="tel" class="form-control" name="mobile" id="mobile" placeholder="Mobile*" required="required" value="">
+									<input type="tel" class="form-control" name="mobile" required="required" id="mobile" placeholder="Mobile*" required="required" value="">
 									<img src="lib/img/UG.png" width="20">
 									<span class="code">+256</span>
 								</div>
 								<div class="form-group">
-									<textarea style="min-height:120px !important" class="form-control materialize-textarea" name="address" placeholder="Full Delivery Address*" required="required"></textarea>
+									<textarea style="min-height:120px !important" class="form-control materialize-textarea" name="address" required="required" placeholder="Full Delivery Address*" required="required"></textarea>
 								</div>
 							
 																								

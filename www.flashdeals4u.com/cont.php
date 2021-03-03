@@ -21,6 +21,8 @@
 
  <form method="post">
 
+  Name: <input name="name" type="text" />
+
   Email: <input name="email" type="text" />
 
   Subject: <input name="subject" type="text" />

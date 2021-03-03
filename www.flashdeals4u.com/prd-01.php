@@ -1,3 +1,13 @@
+<?php
+// (A) PROCESS ORDER FORM
+if (isset($_POST['name'])) { 
+  require "process.php"; 
+  echo $result == "" 
+    ? "<div class='notify'>Thank You! We have received your order</div>" 
+    : "<div class='notify'>$result</div>" ;
+}
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -17,32 +27,31 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--META TAGES ENDS-->
-    
-    <!--Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+	<!--Favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
-    
+   
     <!-- Bootstrap Fremwork Main Css -->
-    <link rel="stylesheet" href="www.flashdeals4u.com/uniqlo/css/bootstrap.min.css">
+    <link rel="stylesheet" href="uniqlo/css/bootstrap.min.css">
     <!-- All Plugins css -->
-    <link rel="stylesheet" href="www.flashdeals4u.com/uniqlo/css/plugins.css">
+    <link rel="stylesheet" href="uniqlo/css/plugins.css">
     <!-- Theme shortcodes/elements style -->
-    <link rel="stylesheet" href="www.flashdeals4u.com/uniqlo/css/shortcode/shortcodes.css">
+    <link rel="stylesheet" href="uniqlo/css/shortcode/shortcodes.css">
     <!-- Theme main style -->
-    <link rel="stylesheet" href="www.flashdeals4u.com/uniqlo/style.css">
+    <link rel="stylesheet" href="uniqlo/style.css">
     <!-- Responsive css -->
-    <link rel="stylesheet" href="www.flashdeals4u.com/uniqlo/css/responsive.css">
+    <link rel="stylesheet" href="uniqlo/css/responsive.css">
     <!-- User style -->
-    <link rel="stylesheet" href="www.flashdeals4u.com/uniqlo/css/custom.css">
+    <link rel="stylesheet" href="uniqlo/css/custom.css">
 
     <!-- Modernizr JS -->
-    <script src="www.flashdeals4u.com/uniqlo/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="uniqlo/js/vendor/modernizr-2.8.3.min.js"></script>
 	
 <!-- jquery latest version -->
-    <script src="www.flashdeals4u.com/uniqlo/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="uniqlo/js/vendor/jquery-1.12.4.min.js"></script>
 	
 	<!-- Facebook Pixel Code -->
 	<script>
@@ -97,7 +106,7 @@
                         <div class="col-md-2 col-lg-2 col-6">
                             <div class="logo">
                                 <a href="index.html">
-								<img src="www.flashdeals4u.com/lib/img/logo.png" border="0">
+								<img src="lib/img/logo.png" border="0">
 								</a>
                             </div>
                         </div>
@@ -106,19 +115,19 @@
                             <nav class="mainmenu__nav  d-none d-lg-block">
                                 <ul class="main__menu">
                                     <li><a href="index.html">Home</a></li>
-                                    <li><a href="www.flashdeals4u.com/About-Us.html">About</a></li>
-                                    <li><a href="www.flashdeals4u.com/products.html">Products</a></li>
-                                    <li><a href="www.flashdeals4u.com/contact-us.html">Contact Us</a></li>
+                                    <li><a href="About-Us.html">About</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                    <li><a href="contact-us.html">Contact Us</a></li>
                                 </ul>
                             </nav>
                             
                             <div class="mobile-menu clearfix d-block d-lg-none">
                                 <nav id="mobile_dropdown">
                                     <ul>
-                                    <li><a href="www.flashdeals4u.com/index.html">Home</a></li>
-                                    <li><a href="www.flashdeals4u.com/About-Us.html">About</a></li>
-                                    <li><a href="www.flashdeals4u.com/products.html">Products</a></li>
-                                    <li><a href="www.flashdeals4u.com/contact-us.html">Contact Us</a></li>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="About-Us.html">About</a></li>
+                                    <li><a href="products.html">Products</a></li>
+                                    <li><a href="contact-us.html">Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>  
@@ -162,66 +171,127 @@
         </div>
         <!-- End Offset Wrapper -->
         
-<!-- Start Slider Area -->
-        <div class="slider__container slider--one">
-            <div class="slider__activation__wrap owl-carousel owl-theme">
-			                <!-- Start Single Slide -->
-                <div class="slide slider__fixed--height" style="background: rgba(0, 0, 0, 0) url(www.flashdeals4u.com/uploads/s1.jpg) no-repeat scroll center center / cover ;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-4 col-sm-12 col-xs-12">
-                                <div class="slider__inner">
-                                </div>
+<!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(uniqlo/images/bg/2.jpg) no-repeat scroll center center / cover ;">
+            <div class="ht__bradcaump__wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="bradcaump__inner">
+                                <h2 class="bradcaump-title">Kids Second Hand Clothes</h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- End Single Slide -->
-			                <!-- Start Single Slide -->
-                <div class="slide slider__fixed--height" style="background: rgba(0, 0, 0, 0) url(www.flashdeals4u.com/uploads/s2.jpg) no-repeat scroll center center / cover ;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-4 col-sm-12 col-xs-12">
-                                <div class="slider__inner">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Slide -->
-			            </div>
+            </div>
         </div>
-        <!-- Start Slider Area -->
-
-        <!-- Start Our Product Area -->
-        <section class="htc__product__area ptb--50 bg__white">
-            <div class="container">
-                <div class="htc__product__container">
-                    <!-- Start Product MEnu -->
-					<div class="col-md-12">
-						<div class="product__menu">
-							<button data-filter="*"  class="is-checked">All</button>
-														<button data-filter=".cat-9">CLOTHES</button>
-														<button data-filter=".cat-10">FLASH DEALS</button>
-														<button data-filter=".cat-11">ELECTRONICS</button>
-													</div>
+<!-- End Bradcaump area --> 
+<!-- Start Product Details -->
+	<section class="htc__product__details pt--10 pb--10 bg__white pro-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-6 col-sm-12">
+					<div class="product__details__container">
+												<div class="product__big__images" style="position: relative;">
+												
+							<div class="portfolio-full-image tab-content">
+															<div role="tabpanel" class="tab-pane active" id="img-tab-1">
+									<img src="uploads/cashes/21-05-30-11-34-IMAGE14-100x100.jpg" alt="full-image">
+								</div>
+							</div>
+						</div>
+						<ul class="pro__dtl__prize">
+							
+							<li>UGX 50000</li>
+							
+						</ul>
 					</div>
-                    <!-- End Product MEnu -->
-                    <div class="row product__list">
-											<!-- Start Single Product -->
+				</div>
+				<div class="col-md-12 col-lg-6 col-sm-12 smt-30 xmt-30">
+					<div class="htc__product__details__inner">
+												<div class="prodetails" style="margin-top: 0px;">
+						<h3><big><strong>The Latest Second Hand kids Clothes Available For Limited Time Period.</strong></big></h3>
+						</div>
+						<hr>
+						    <div class="pro__detl__title">
+							<h2>Order Now</h2>
+							
+							<p>Kindly fill the form & we will deliver in 2 days</p>
+						</div>
+						<div class="pro__details">
+														<form method="POST" action="https://www.kwikydeals.com/index.php/product" id="orderfrm">
+								<div class="form-group">
+									<input type="text" class="form-control" name="names" required="required" placeholder="Name*" id="names" required="required" value="">
+								</div>
+								<div class="form-group fake-input">
+									<input type="tel" class="form-control" name="mobile" required="required" id="mobile" placeholder="Mobile*" required="required" value="">
+									<img src="lib/img/UG.png" width="20">
+									<span class="code">+256</span>
+								</div>
+								<div class="form-group">
+									<textarea style="min-height:120px !important" class="form-control materialize-textarea" name="address" required="required" placeholder="Full Delivery Address*" required="required"></textarea>
+								</div>
+							
+																								
+								
+								
+								<div class="form-group">
+									<select name="pieces" class="form-control" required="required">
+										<option value="">Quantity</option>
+																				<option value="1">1 Piece</option>
+																				<option value="2">2 Pieces</option>
+																				<option value="3">3 Pieces</option>
+																				<option value="4">4 Pieces</option>
+																				<option value="5">5 Pieces</option>
+																				<option value="6">6 Pieces</option>
+																				<option value="7">7 Pieces</option>
+																				<option value="8">8 Pieces</option>
+																				<option value="9">9 Pieces</option>
+																				<option value="10">10 Pieces</option>
+																			</select>
+								</div>
+								
+								<div class="form-group">
+									<input type="email" class="form-control" id="email" name="email" placeholder="Email address" value="">
+									<input type="hidden" class="form-control" id="" name="pid" value="32">
+								</div>
+								
+								<button type="submit" id="btnfrmsubmit" class="btn btn-default btn-submit">SUBMIT ORDER</button>
+							</form>
+						</div>
+                        					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End Product Details -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<hr>
+			<h2>Other Products</h2>
+		</div>
+	</div>
+</div>
+<!-- Start Our Product Area -->
+	<section class="htc__product__area pb--50 bg__white">
+		<div class="container">
+			<div class="htc__product__container">
+				<div class="row product__list">
+										<!-- Start Single Product -->
 <div class="col-md-3 single__pro col-lg-3 col-md-4 cat-9 col-sm-12">
-	<a href="www.flashdeals4u.com/prd01.php">
+	<a href="p-268.html">
 	<div class="product foo">
 		<div class="product__inner">
 					<div class="pro__thumb">
-				<img src="www.flashdeals4u.com/uploads/cashes/20-05-30-11-34-IMAGE14-268x268.jpg" alt="product images">
-				
-		</div>
+				<img src="uploads/cashes/20-05-30-11-34-IMAGE1-540x401.jpg" alt="product images">
+				</div>
 		</div>
 		<div class="product__details text-center">
-			<h2>Item 1</h2>
+			<h2>Gold Dress</h2>
 			<p> 
-				<span class="price">UGX 50,000</span>
+				<span class="price">UGX 150000</span>
 			</p>
 		</div>
 	</div>
@@ -233,14 +303,13 @@
 	<div class="product foo">
 		<div class="product__inner">
 					<div class="pro__thumb">
-				<img src="www.flashdeals4u.com/uploads/cashes/20-08-10-11-17-1-qawSvst-268x268.jpg" alt="product images">																
-		</div>
+				<img src="uploads/cashes/20-05-30-11-34-IMAGE14-100x100.jpg" alt="product images">
+							</div>
 		</div>
 		<div class="product__details text-center">
-			<h2>Item 2</h2>
-			<p>
-				 
-				<span class="price">UGX 73000</span>
+			<h2>Jump Suit</h2>
+			<p> 
+				<span class="price">UGX 100000</span>
 			</p>
 		</div>
 	</div>
@@ -252,14 +321,13 @@
 	<div class="product foo">
 		<div class="product__inner">
 					<div class="pro__thumb">
-				<img src="www.flashdeals4u.com/uploads/cashes/20-05-30-11-34-IMAGE1-540x401.jpg" alt="product images">
-		</div>
+				<img src="uploads/cashes/20-05-30-11-37-IMAGE14-100x100.jpg" alt="product images">
+							</div>
 		</div>
 		<div class="product__details text-center">
-			<h2>Item 3</h2>
-			<p>
-				 
-				<span class="price">UGX 89000</span>
+			<h2>Dress</h2>
+			<p> 
+				<span class="price">UGX 80000</span>
 			</p>
 		</div>
 	</div>
@@ -271,14 +339,14 @@
 	<div class="product foo">
 		<div class="product__inner">
 					<div class="pro__thumb">
-				<img src="www.flashdeals4u.com/uploads/cashes/20-08-10-11-17-1-qawSvst-268x268.jpg" alt="product images">
-				</div>
+				<img src="uploads/cashes/20-05-30-11-34-IMAGE1-100x100.jpg" alt="product images">
+							</div>
 		</div>
 		<div class="product__details text-center">
-			<h2>Item 4</h2>
+			<h2>Hand Bag</h2>
 			<p>
 				 
-				<span class="price">UGX 69000</span>
+				<span class="price">UGX 120000</span>
 			</p>
 		</div>
 	</div>
@@ -290,15 +358,14 @@
 	<div class="product foo">
 		<div class="product__inner">
 					<div class="pro__thumb">
-				<img src="www.flashdeals4u.com/uploads/cashes/20-08-10-11-17-1-qawSvst-268x268.jpg" alt="product images">
-				
-		</div>
+				<img src="uploads/cashes/20-05-30-11-34-IMAGE1-540x401.jpg" alt="product images">
+							</div>
 		</div>
 		<div class="product__details text-center">
-			<h2>Item 5</h2>
+			<h2>Gold Dress</h2>
 			<p>
-				
-				<span class="price">UGX 49000</span>
+				 
+				<span class="price">UGX 150000</span>
 			</p>
 		</div>
 	</div>
@@ -310,15 +377,14 @@
 	<div class="product foo">
 		<div class="product__inner">
 					<div class="pro__thumb">
-				<img src="www.flashdeals4u.com/uploads/cashes/20-05-30-11-34-IMAGE14-100x100.jpg" alt="product images">
+				<img src="uploads/cashes/20-05-30-11-34-IMAGE1-100x100.jpg" alt="product images">
 					
-		</div>
+							</div>
 		</div>
 		<div class="product__details text-center">
-			<h2>Item 6</h2>
-			<p>
-				 
-				<span class="price">UGX 57000</span>
+			<h2>Hand Bag</h2>
+			<p> 
+				<span class="price">UGX 120000</span>
 			</p>
 		</div>
 	</div>
@@ -330,15 +396,14 @@
 	<div class="product foo">
 		<div class="product__inner">
 					<div class="pro__thumb">
-				<img src="www.flashdeals4u.com/uploads/cashes/20-08-10-11-17-1-qawSvst-268x268.jpg" alt="product images">
+				<img src="uploads/cashes/20-05-30-11-34-IMAGE14-100x100.jpg" alt="product images">
 					
-		</div>
+							</div>
 		</div>
 		<div class="product__details text-center">
-			<h2>Item 7</h2>
-			<p>
-				 
-				<span class="price">UGX 52000</span>
+			<h2>Jump Suit</h2>
+			<p> 
+				<span class="price">UGX 100000</span>
 			</p>
 		</div>
 	</div>
@@ -350,32 +415,131 @@
 	<div class="product foo">
 		<div class="product__inner">
 					<div class="pro__thumb">
-				<img src="www.flashdeals4u.com/uploads/cashes/20-05-30-11-37-IMAGE14-100x100.jpg" alt="product images">
+				<img src="uploads/cashes/20-05-30-11-34-IMAGE1-540x401.jpg" alt="product images">
 				
-		</div>
+							</div>
 		</div>
 		<div class="product__details text-center">
-			<h2>Item 8</h2>
+			<h2>Gold Dress</h2>
 			<p>
 				
-				<span class="price">UGX 48000</span>
+				<span class="price">UGX 150000</span>
 			</p>
 		</div>
 	</div>
 	</a>
 </div>
 <!-- End Single Product -->										
-                </div>
-            </div>
-        </section>
-        <!-- End Our Product Area -->
-    </div>
-    <!-- Body main wrapper end -->
-    
+<!-- End Single Product -->									</div>
+			</div>
+		</div>
+	</section>
+<!-- End Our Product Area -->
+
+
+<script type="text/javascript" src="lib/js/jquery.validate.js"></script>
+<script language="JavaScript" type="text/javascript">
+
+$("#orderfrm").validate({rules:{
+		mobile: {
+		  required: true,
+		  rangelength: [9, 9],
+		  digits: true
+		}
+  },
+  messages: {
+	mobile: "Please give your valid mobile number '512345678' without the '0' in front",
+  },
+  submitHandler: function(form)
+  {
+	  $("#btnfrmsubmit").prop("disabled",true);
+	  form.submit();
+  },
+  invalidHandler: function(event, validator)
+  {
+	 if( $("#names").val() && $("#mobile").val() )
+	 {
+	 	$.ajax({
+			type: "POST",
+			dataType: "json",
+			data: $("#orderfrm").serializeArray(),
+			url: "https://www.kwikydeals.com/index.php/product/osubmit",
+			success: function(data)
+			{
+				console.log(data);
+			}
+		});
+	 }
+  }
+});
+  
+</script>
+
+<script>
+function GetCount(ddate,iid)
+{
+	dateNow = new Date();
+	amount = ddate.getTime() - dateNow.getTime();
+	delete dateNow;
+	if(amount < 0)
+	{
+		document.getElementById(iid).innerHTML="Still On";
+	}
+	else
+	{
+		hours=0;mins=0;secs=0;out="";
+		amount = Math.floor(amount/1000);
+	
+		days=Math.floor(amount/86400);
+		amount=amount%86400;
+		
+		hours=Math.floor(amount/3600);
+		amount=amount%3600;
+
+		mins=Math.floor(amount/60);
+		amount=amount%60;
+
+		secs=Math.floor(amount);
+		var chs = '';
+		if(days != 0)
+		{
+			var days = (days<=9?'0':'')+days +""+((days==1)?"":"");
+			chs = "DAY";
+			out += "<span class='dtx'><span class='dgt'>" + days + "</span><span class='txt'>"+ chs +"</span></span>";
+		}	
+		if(hours != 0)
+		{
+			var hours= (hours<=9?'0':'')+hours +""+((hours==1)?"":"");
+			chs = "HRS";
+			out += "<span class='dtx'><span class='dgt'>" + hours + "</span><span class='txt'>"+ chs +"</span></span>";
+		}
+		
+		var mints = (mins<=9?'0':'')+mins +""+((mins==1)?"":"");
+		chs = "MIN";
+		out += "<span class='dtx'><span class='dgt'>" + mints + "</span><span class='txt'>"+ chs +"</span></span>";
+		//
+		var secs= (secs<=9?'0':'')+secs +""+((secs==1)?"":"");
+		chs = "SEC";
+		out += "<span class='dtx'><span class='dgt'>" + secs + "</span><span class='txt'>"+ chs +"</span></span>";
+		out = out.substr(0,out.length-2);
+		
+		if(document.getElementById(iid))
+		{
+			document.getElementById(iid).innerHTML=out;
+		}
+		setTimeout(function(){GetCount(ddate,iid)}, 1000);
+	}
+}
+
+	dateFuture1 = new Date('Sat Feb 13 2021 02:34:12 +0400');
+	//dateFuture1 = new Date(2018,10,05,09,00,00);
+	GetCount(dateFuture1, 'countbox');
+
+</script>
 	
 
         <!-- Start Footer Area -->
-        <footer class="htc__foooter__area" style="background: rgba(0, 0, 0, 0) url(www.flashdeals4u.com/uniqlo/images/bg/1.jpg) no-repeat scroll center center / cover ;">
+        <footer class="htc__foooter__area" style="background: rgba(0, 0, 0, 0) url(uniqlo/images/bg/1.jpg) no-repeat scroll center center / cover ;">
             <div class="container">
                 <div class="row footer__container clearfix">
                     <!-- Start Single Footer Widget -->
@@ -447,15 +611,15 @@
         </footer>
         <!-- End Footer Area -->
     <a target="_blank" href="https://api.whatsapp.com/send?phone=+256776192866&amp;text=" style="bottom:10px; left:10px; position: fixed; z-index: 99999999;"> 
-    <img style="height: 60px;" src="www.flashdeals4u.com/uniqlo/images/wlogo4.png" alt="WhatsApp chat">
+    <img style="height: 60px;" src="uniqlo/images/wlogo4.png" alt="WhatsApp chat">
     </a>
     <!-- Bootstrap Framework js -->
-    <script src="www.flashdeals4u.com/uniqlo/js/popper.min.js"></script>
-    <script src="www.flashdeals4u.com/uniqlo/js/bootstrap.min.js"></script>
+    <script src="uniqlo/js/popper.min.js"></script>
+    <script src="uniqlo/js/bootstrap.min.js"></script>
     <!-- All js plugins included in this file. -->
-    <script src="www.flashdeals4u.com/uniqlo/js/plugins.js"></script>
+    <script src="uniqlo/js/plugins.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
-    <script src="www.flashdeals4u.com/uniqlo/js/main.js"></script>
+    <script src="uniqlo/js/main.js"></script>
 
 </body>
 </html>

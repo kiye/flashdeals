@@ -1,6 +1,3 @@
-<script>
-<?php include 'mail.php'; ?>
-</script>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -39,7 +36,6 @@
     <link rel="stylesheet" href="uniqlo/css/responsive.css">
     <!-- User style -->
     <link rel="stylesheet" href="uniqlo/css/custom.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
 
     <!-- Modernizr JS -->
     <script src="uniqlo/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -186,28 +182,78 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="contact-form-wrap">
-							<form id="contact-form-wrap" name="contactform" action="contact-form-handler.php" method="post">
+							<form name="frmContact" id="" frmContact"" method="post" action="" enctype="multipart/form-data" onsubmit="return validateContactForm()"> 
 								<div class="single-contact-form">
 									<div class="contact-box name">
-										<input type="text" name="name" id="name" required="required" placeholder="Your Name*">
-										<input type="email" name="email" id="email" required="required" placeholder="Mail*">
+										<input type="text" id="name" name="name" placeholder="Your Name*">
+										<input id="email" type="email" name="email" placeholder="Mail*">
 									</div>
 								</div>
 								<div class="single-contact-form">
 									<div class="contact-box subject">
-										<input type="text" name="subject" required="required" id="subject" placeholder="Subject*">
+										<input id="subject" type="text" name="subject" placeholder="Subject*">
 									</div>
 								</div>
-								<div class="single-contact-form">
+								<div id="message" class="single-contact-form">
 									<div class="contact-box message">
-										<textarea name="message" id="message" required="required" placeholder="Message*"></textarea>
+										<textarea id="message" name="message"  placeholder="Message*"></textarea>
 									</div>
 								</div>
 								<div class="contact-btn">
 									<button type="submit" class="fv-btn">SEND</button>
 								</div>
+
+                                <div id="statusMessage"> 
+                        <?php
+                        if (! empty($message)) {
+                            ?>
+                            <p class='<?php echo $type; ?>Message'><?php echo $message; ?></p>
+                        <?php
+                        }
+                        ?>
+                    </div>
 							</form>
-						</div> 
+						</div>
+
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function validateContactForm() {
+            var valid = true;
+
+            $(".info").html("");
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var subject = $("#subject").val();
+            var message = $("#message").val();
+            
+            if (name == "") {
+                $("#name").html("Required.");
+                valid = false;
+            }
+            if (email == "") {
+                $("#email").html("Required.");
+                valid = false;
+            }
+
+            }
+            if (!email.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
+            {
+                $("#email").html("Invalid Email Address.");
+                valid = false;
+            }
+
+            if (subject == "") {
+                $("#subject").html("Required.");
+                valid = false;
+            }
+            if (message == "") {
+                $("#message").html("Required.");
+                valid = false;
+            }
+            return valid;
+</script> 
+
+
 						<div class="form-output">
 							<p class="form-messege"></p>
 						</div>
@@ -219,9 +265,9 @@
 
 <p>Uganda</p>
 
-<p>Facebook: <a href="https://www.facebook.com/flashdeals">@flashdeals4u</a></p>
+<p>Facebook: <a href="https://www.facebook.com/kwikydealsae">@flashdeals4u</a></p>
 
-<p>Instagram: <a href="https://www.instagram.com/flashdeals/">flashdeals4u&nbsp;</a></p>
+<p>Instagram: <a href="https://www.instagram.com/kwikydeals/">flashdeals4u&nbsp;</a></p>
 
 <p>Email: flashdealsdeals4u@gmail.com</p>
 
@@ -308,25 +354,18 @@
     <a target="_blank" href="https://api.whatsapp.com/send?phone=+256776192866&amp;text=" style="bottom:10px; left:10px; position: fixed; z-index: 99999999;"> 
     <img style="height: 60px;" src="uniqlo/images/wlogo4.png" alt="WhatsApp chat">
     </a>
-    <script
-  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- Bootstrap Framework js -->
     <script src="uniqlo/js/popper.min.js"></script>
     <script src="uniqlo/js/bootstrap.min.js"></script>
+
+    <!-- Contact form validation -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
     <!-- All js plugins included in this file. -->
     <script src="uniqlo/js/plugins.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="uniqlo/js/main.js"></script>
-
-   <script language="JavaScript">
-// Code for validating the form
-// Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
-// for details
-var frmvalidator  = new Validator("contactform");
-frmvalidator.addValidation("name","req","Please provide your name"); 
-frmvalidator.addValidation("email","req","Please provide your email"); 
-frmvalidator.addValidation("email","email","Please enter a valid email address"); 
-</script>
+    <!-- jquery easing -->
 
 </body>
 </html>
